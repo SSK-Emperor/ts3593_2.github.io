@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>about.knit</title>
+
+<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Tiancheng Shi's website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="mailto:&lt;ts3593@cumc.columbia.edu&gt;">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/SSK-Emperor">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/tiancheng-shi-62ba78200/">
+    <span class="fa fa-brands fa-linkedin"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<div id="about-me" class="section level2">
+<h2>About me</h2>
+<div id="education" class="section level3">
+<h3>EDUCATION</h3>
+<p>Columbia University, Mailman School of Public Health, New York, NY,
+US May 2025</p>
+<p>Master of Public Health in Biostatistics | Certificate in Advanced
+Epidemiology</p>
+<p>University of Illinois at Urbana-Champaign IL, US Sept 2019-May
+2023</p>
+<p>Double Majors: Statistic &amp; Computer Science, Information Science
+(Bachelor of Science))</p>
+</div>
+<div id="data-analysis-and-research-project-experience"
+class="section level3">
+<h3>DATA ANALYSIS AND RESEARCH PROJECT EXPERIENCE</h3>
+<div id="shanghai-institute-for-food-and-drug-control-shanghai-china"
+class="section level4">
+<h4>Shanghai Institute for Food and Drug Control Shanghai, China</h4>
+<p>Data Analyst (Intern) Dec 2023-Jan/2024</p>
+<p>• Conducted the theoretical study of Chinese Pharmacopoeia and U.S.
+Pharmacopoeia in the relevant chapters of biochemical assay.</p>
+<p>• Participated in the bioefficacy determination of
+follicle-stimulating hormone in rats, rabbit vascular stimulation
+test.</p>
+<p>• Present an academic report of ‘Public Health and the U.S.
+Pharmacopoeia’, which focusing on showing the biostatstic parts.</p>
+</div>
+<div
+id="mcdonalds-food-ingredients-data-analysis-and-visualization---leader-in-a-team-of-four-sept-dec2022"
+class="section level4">
+<h4>McDonald’s Food Ingredients Data Analysis and Visualization - Leader
+in a team of four Sept-Dec/2022</h4>
+<p>• Reviewed a dataset from Kaggle on related nutrients and chose four
+ingredients, e.g. trans-fat, total fat, calories, and cholesterol, as
+the judging criteria to determine the unhealthy extent.</p>
+<p>• Generated graphs by R to display the four ingredients content in
+different types of food.</p>
+<p>• Interpreted the analysis results in integration with the
+application scenarios.</p>
+</div>
+<div
+id="modern-data-visualization-of-big-data-supervisor-associate-prof.-mark-vogelsberger-sept-dec2022"
+class="section level4">
+<h4>Modern Data Visualization of Big Data Supervisor: Associate
+Prof. Mark Vogelsberger Sept-Dec/2022</h4>
+<p>• Learned visualization techniques for big data using Python combined
+with machine learning and data retrieval and storage techniques.</p>
+<p>• Analyzed by Python the factors that may contribute to stroke based
+on a Kaggle dataset.</p>
+<p>• Learned the granger causality and vector autoregression model to
+find which attribute in the dataset has casualty with stroke.</p>
+<p>• Analyzed the results and wrote the paper Stroke Factor Analysis
+Based on Granger Causality Test.</p>
+</div>
+<div
+id="a-python-study-of-the-american-data-science-job-market-for-the-design-of-human-centered-information-science-courses---supervisor-assistant-prof.-choi-inkyung-feb-jun2022"
+class="section level4">
+<h4>A Python Study of the American Data Science Job Market for the
+Design of Human-centered Information Science Courses - Supervisor:
+Assistant Prof. Choi Inkyung Feb-Jun/2022</h4>
+<p>• Collected data about the data science job market by using UiPath,
+10 subcategories with thousands of items each, e.g. data management,
+data cleaning, etc.</p>
+<p>• Analyzed the frequency of keywords by Python, like job recruitment
+qualifications, ranked keywords according to their frequency of
+occurrence, and visualized the results in scatter plots.</p>
+</div>
+<div
+id="data-visualization-based-on-sql---supervisor-assistant-prof.-abdussalam-alawini-leader-in-a-team-of-three-jun-aug-2022"
+class="section level4">
+<h4>Data Visualization Based on SQL - Supervisor: Assistant
+Prof. Abdussalam Alawini; Leader in a team of three Jun-Aug 2022</h4>
+<p>• Built a database by SQL, input thousands of lines of employment
+data, and designed 10+ searching conditions.</p>
+<p>• Visualized the database on the web by Python flask, allowing data
+entry, modification, deletion, etc. on the server.</p>
+<p>• Implemented in JavaScript the web with buttons.</p>
+<p>• Added index buttons to display related information like income
+distribution of appointed positions.</p>
+</div>
+<div id="metrodatatech-httpswww.metrodata.cn-shanghai-china"
+class="section level4">
+<h4>MetroDataTech (<a href="https://www.metrodata.cn/"
+class="uri">https://www.metrodata.cn/</a>) Shanghai, China</h4>
+<p>Data Analyst (Intern) Jan-Apr/2021</p>
+<p>• Collected and transcribed the primary registered data of certain
+retail companies and assisted in creating databases.</p>
+<p>• Created spreadsheets and assisted in the statistics of the city’s
+gross industrial production.</p>
+</div>
+</div>
+<div id="publication" class="section level3">
+<h3>PUBLICATION</h3>
+<p>Shi, Tiancheng. (2023). Stroke Factor Analysis based on Granger
+Causality Test. Highlights in Science, Engineering and Technology, 39,
+1269–1273. <a href="https://doi.org/10.54097/hset.v39i.6753"
+class="uri">https://doi.org/10.54097/hset.v39i.6753</a></p>
+</div>
+<div id="professional-skills" class="section level3">
+<h3>PROFESSIONAL SKILLS</h3>
+<p>Programming Languages: Python, C++, Java, C, R, SAS(Base Programming
+certificate) Database: SQL Additional Technical Skills: Filmora, Adobe
+Photoshop/Premiere, Microsoft Office (PowerPoint, Word, Excel)</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

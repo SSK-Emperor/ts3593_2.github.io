@@ -1,0 +1,84 @@
+---
+output: 
+  html_document:
+  roc: true
+  toc_float: true
+---
+
+## About me
+
+### EDUCATION      
+
+Columbia University, Mailman School of Public Health, New York, NY, US     May 2025
+
+Master of Public Health in Biostatistics | Certificate in Advanced Epidemiology
+
+University of Illinois at Urbana-Champaign IL, US	                         Sept 2019-May 2023
+
+Double Majors: Statistic & Computer Science, Information Science (Bachelor of Science))
+
+### DATA ANALYSIS AND RESEARCH PROJECT EXPERIENCE                                                                                                 
+#### Shanghai Institute for Food and Drug Control 	Shanghai, China
+
+Data Analyst (Intern)	Dec 2023-Jan/2024
+
+•	Conducted the theoretical study of Chinese Pharmacopoeia and U.S. Pharmacopoeia in the relevant chapters of biochemical assay.
+
+•	Participated in the bioefficacy determination of follicle-stimulating hormone in rats, rabbit vascular stimulation test.
+
+•	Present an academic report of ‘Public Health and the U.S. Pharmacopoeia’, which focusing on showing the biostatstic parts. 
+
+#### McDonald’s Food Ingredients Data Analysis and Visualization - Leader in a team of four	Sept-Dec/2022
+
+•	Reviewed a dataset from Kaggle on related nutrients and chose four ingredients, e.g. trans-fat, total fat, calories, and cholesterol, as the judging criteria to determine the unhealthy extent.
+
+•	Generated graphs by R to display the four ingredients content in different types of food.
+
+•	Interpreted the analysis results in integration with the application scenarios.
+
+#### Modern Data Visualization of Big Data Supervisor: Associate Prof. Mark Vogelsberger	Sept-Dec/2022
+
+•	Learned visualization techniques for big data using Python combined with machine learning and data retrieval and storage techniques.
+
+•	Analyzed by Python the factors that may contribute to stroke based on a Kaggle dataset.
+
+•	Learned the granger causality and vector autoregression model to find which attribute in the dataset has casualty with stroke.
+
+•	Analyzed the results and wrote the paper Stroke Factor Analysis Based on Granger Causality Test.
+
+#### A Python Study of the American Data Science Job Market for the Design of Human-centered Information Science Courses - Supervisor: Assistant Prof. Choi Inkyung	Feb-Jun/2022 
+
+•	Collected data about the data science job market by using UiPath, 10 subcategories with thousands of items each, e.g. data management, data cleaning, etc.
+
+•	Analyzed the frequency of keywords by Python, like job recruitment qualifications, ranked keywords according to their frequency of occurrence, and visualized the results in scatter plots.
+
+#### Data Visualization Based on SQL - Supervisor: Assistant Prof. Abdussalam Alawini; Leader in a team of three	Jun-Aug 2022
+
+•	Built a database by SQL, input thousands of lines of employment data, and designed 10+ searching conditions.
+
+•	Visualized the database on the web by Python flask, allowing data entry, modification, deletion, etc. on the server.
+
+•	Implemented in JavaScript the web with buttons.
+
+•	Added index buttons to display related information like income distribution of appointed positions.  
+
+#### MetroDataTech (https://www.metrodata.cn/) 	Shanghai, China
+
+Data Analyst (Intern)	Jan-Apr/2021
+
+•	Collected and transcribed the primary registered data of certain retail companies and assisted in creating databases.
+
+•	Created spreadsheets and assisted in the statistics of the city's gross industrial production.
+
+### PUBLICATION                                                                                                                            
+Shi, Tiancheng. (2023). Stroke Factor Analysis based on Granger Causality Test. Highlights in Science, Engineering and Technology, 39, 1269–1273. https://doi.org/10.54097/hset.v39i.6753
+
+### PROFESSIONAL SKILLS                                                                                                        
+Programming Languages: Python, C++, Java, C, R, SAS(Base Programming certificate)
+Database: SQL 
+Additional Technical Skills: Filmora, Adobe Photoshop/Premiere, Microsoft Office (PowerPoint, Word, Excel)
+
+
+
+
+
