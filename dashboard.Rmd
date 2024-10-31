@@ -1,0 +1,57 @@
+---
+title: "Dashboard for instacart"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+data("instacart")
+```
+
+-----------------------------------------------------------------------
+
+### Top 20 hottest product
+
+```{r}
+num_order_instacart =
+  group_by(instacart, product_name)|>
+  summarise(order_num = n()) |>
+  select(product_name,order_num) |>
+  filter(order_num > 100)
+num_order_instacart |>
+  arrange(desc(order_num))|>
+  head(20)|>
+  plot_ly(x=~product_name,y=~order_num,type="bar")
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Number of product bought by first 5000 users in each department
+
+```{r}
+cleaned_instacart =
+  filter(instacart, user_id<5000)|>
+  select(user_id, department)
+
+cleaned_instacart |>
+  group_by(department, user_id) |>
+  summarise(num = n(),.groups = 'drop')|>
+  plot_ly(x=~department,y=~num, type = "box")
+```
+
+### Time for first 100 user to but product in each department
+
+```{r}
+cleaned_instacart_100 =
+  filter(instacart, user_id<100)
+
+cleaned_instacart_100 |>
+  plot_ly(x=~department, y=~order_hour_of_day, type = "scatter", mode="markers")
+```
+

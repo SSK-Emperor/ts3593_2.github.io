@@ -1,0 +1,56 @@
+---
+author: "Shi Tiancheng"
+  html_document:
+  roc: true
+  toc_float: true
+---
+
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
+
+```{r}
+data("instacart")
+```
+
+```{r}
+num_order_instacart =
+  group_by(instacart, product_name)|>
+  summarise(order_num = n()) |>
+  select(product_name,order_num) |>
+  filter(order_num > 100)
+
+```
+
+```{r}
+num_order_instacart |>
+  arrange(desc(order_num))|>
+  head(20)|>
+  plot_ly(x=~product_name,y=~order_num,type="bar")
+```
+
+```{r}
+cleaned_instacart =
+  filter(instacart, user_id<5000)|>
+  select(user_id, department)
+```
+
+```{r}
+cleaned_instacart |>
+  group_by(department, user_id) |>
+  summarise(num = n(),.groups = 'drop')|>
+  plot_ly(x=~department,y=~num, type = "box")
+```
+
+```{r}
+cleaned_instacart_100 =
+  filter(instacart, user_id<100)
+```
+
+```{r}
+cleaned_instacart_100 |>
+  plot_ly(x=~department, y=~order_hour_of_day, type = "scatter", mode="markers")
+```
+
